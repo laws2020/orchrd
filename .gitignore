@@ -4,3 +4,13 @@
 .httr-oauth
 .DS_Store
 .quarto
+docs
+altdoc/freeze.rds
+_quarto/*
+!_quarto/_freeze/
+..Rcheck/
+orchrd.Rcheck/
+src/*.o
+src/*.dll
+src/*.so
+src/*.dylib

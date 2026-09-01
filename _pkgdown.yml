@@ -1,0 +1,203 @@
+url: https://laws2020.github.io/orchrd
+
+template:
+  bootstrap: 5
+  bootswatch: flatly
+  light-switch: true
+
+navbar:
+  structure:
+    left:
+      - get-started
+      - reference
+      - articles
+      - news
+    right:
+      - search
+      - github
+      - lightswitch
+
+  components:
+    get-started:
+      text: Get Started
+      href: articles/orchrd-guide.html
+
+reference:
+
+- title: "Pipeline Engine"
+  desc: >
+    Build, execute, resume, and inspect sequential workflows.
+  contents:
+  - pipe_exec
+  - pipeline_summary
+  - resume_pipeline
+  - step_done
+
+- title: "Command & Script Execution"
+  desc: >
+    Run external commands and scripts through one structured interface.
+  contents:
+  - run_cmd
+  - run_script
+
+- title: "Background & Batch Execution"
+  desc: >
+    Run background jobs and execute tasks with controlled parallelism.
+  contents:
+  - run_bg
+  - await
+  - batch_exec
+  - batch_combine
+
+- title: "Reliability & Control Flow"
+  desc: >
+    Retry operations, perform rollback actions, and create deployment steps.
+  contents:
+  - retry
+  - retry_labeled
+  - with_rollback
+  - deploy_step
+
+- title: "Checkpoints"
+  desc: >
+    Persist workflow progress and resume interrupted pipelines.
+  contents:
+  - checkpoint
+  - list_checkpoints
+  - clear_checkpoint
+
+- title: "Artifacts"
+  desc: >
+    Persist, retrieve, inspect, and remove workflow artifacts.
+  contents:
+  - store_artifact
+  - load_artifact
+  - list_artifacts
+  - delete_artifact
+
+- title: "Logging & Observability"
+  desc: >
+    Add structured logging and inspect workflow execution history.
+  contents:
+  - log_step
+  - with_log
+  - log_config
+  - get_log
+
+- title: "Validation"
+  desc: >
+    Validate data and enforce simple structural and quality constraints.
+  contents:
+  - validate_data
+  - assert_schema
+  - assert_range
+  - assert_no_na
+
+- title: "Environment & Diagnostics"
+  desc: >
+    Verify the execution environment and diagnose system health.
+  contents:
+  - need
+  - health_check
+  - health_report
+  - diagnose
+
+- title: "Configuration"
+  desc: >
+    Manage layered configuration values used by workflows.
+  contents:
+  - config_get
+  - config_all
+  - config_has
+  - config_clear
+  - load_config
+
+- title: "Secrets"
+  desc: >
+    Safely retrieve, mask, inspect, and reveal sensitive values.
+  contents:
+  - secret
+  - reveal
+  - is_secret
+  - secure_secrets
+  - secure_r_secrets
+
+- title: "Notifications"
+  desc: >
+    Signal workflow completion through supported notification channels.
+  contents:
+  - notify
+
+- title: "Filesystem Watchers"
+  desc: >
+    React to files being created, modified, deleted, or renamed.
+  contents:
+  - watch_dir
+  - watch_file
+  - fire_on
+  - on_arrive
+  - on_change
+  - on_leave
+  - on_rename
+  - unwatch
+  - unwatch_all
+  - watcher_test
+
+- title: "Scheduling"
+  desc: >
+    Register cron-style time-based triggers inside an R session.
+  contents:
+  - on_schedule
+  - schedule_test
+
+- title: "Guards & Throttling"
+  desc: >
+    Control when callbacks execute and prevent excessive event firing.
+  contents:
+  - guard
+  - throttle
+  - disk_ok
+  - mem_ok
+  - net_ok
+
+- title: "Pipeline Integration"
+  desc: >
+    Connect filesystem events directly to orchrd pipelines.
+  contents:
+  - pipe_on_arrive
+  - pipe_on_change
+
+- title: "Docker Operations"
+  desc: >
+    Diagnose, repair, maintain, and troubleshoot Docker environments.
+  contents:
+  - diagnose
+  - check_docker_oom
+  - clean_docker_storage
+  - force_remove_container
+  - free_docker_port
+  - repair_docker
+  - fix_docker_permissions
+  - debug_portal_api
+
+- title: "Docker & Build Scaffolding"
+  desc: >
+    Generate Docker assets and optimise R project builds.
+  contents:
+  - generate_dockerfile
+  - generate_r_dockerfile
+  - minify_r_dependencies
+  - optimize_build_speed
+
+- title: "Portal Auditing"
+  desc: >
+    Audit portal frontend identifiers and network configuration.
+  contents:
+  - audit_portal_ids
+  - audit_portal_networks
+
+- title: "Cloud"
+  desc: >
+    Deploy artifacts and workflows to cloud infrastructure.
+  contents:
+  - push_aws

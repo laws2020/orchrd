@@ -1,13 +1,48 @@
 Package: orchrd
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Title: PowerShell-Inspired Workflow Orchestration for R
+Version: 0.1.0
+Authors@R:
+    person("Lawrence", "Garba",
+           email = "yayoli@infosights.ng",
+           role = c("aut", "cre"),
+           comment = c(ORCID = ""))
+Description: Makes R pipelines production-grade. Run things (run_cmd,
+    run_script, run_bg, await), chain them (pipe_exec, with_rollback),
+    retry them (retry, retry_labeled), log them (log_step, with_log,
+    log_config, get_log), and guard against failure before it happens
+    (need, secret, health_check, notify). Includes reactive filesystem
+    watchers and time-based schedule triggers backed by a compiled C++
+    layer (inotify on Linux, ReadDirectoryChangesW on Windows, kqueue on
+    macOS) via Rcpp, with composable guards (disk, memory, network) and
+    throttling, plus tools for inspecting, configuring, debugging, and
+    optimizing Docker infrastructure for R projects. Designed as workflow
+    infrastructure for the openafrR African data ecosystem but general
+    enough for any R developer orchestrating scripts, APIs, and deployments.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.3
-Suggests: 
-    testthat (>= 3.0.0)
+LinkingTo:
+    Rcpp
+Imports:
+    callr,
+    cli (>= 3.6.0),
+    jsonlite (>= 1.8.0),
+    processx (>= 3.8.0),
+    rlang (>= 1.1.0),
+    Rcpp
+Suggests:
+    glue (>= 1.7.0),
+    httr2 (>= 1.0.0),
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown,
+    arrow,
+    yaml,
+    later (>= 1.3.0)
+Depends:
+    R (>= 4.1.0)
+SystemRequirements: C++17
+URL: https://laws2020.github.io/orchrd, https://github.com/laws2020/orchrd
+BugReports: https://github.com/laws2020/orchrd/issues
 Config/testthat/edition: 3
+Config/roxygen2/version: 8.0.0
