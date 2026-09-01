@@ -3,7 +3,7 @@ Title: PowerShell-Inspired Workflow Orchestration for R
 Version: 0.1.0
 Authors@R:
     person("Lawrence", "Garba",
-           email = "yayoli@infosights.ng",
+           email = "laws.garba@gmail.com",
            role = c("aut", "cre"),
            comment = c(ORCID = ""))
 Description: Makes R pipelines production-grade. Run things (run_cmd,
