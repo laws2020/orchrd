@@ -70,11 +70,11 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Lawrence Garba \email{yayoli@infosights.ng}
+\strong{Maintainer}: Lawrence Garba \email{laws.garba@gmail.com}
 
 Authors:
 \itemize{
-  \item Lawrence Garba \email{yayoli@infosights.ng}
+  \item Lawrence Garba \email{laws.garba@gmail.com}
 }
 
 }

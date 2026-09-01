@@ -92,16 +92,23 @@ run_cmd <- function(
   # ── Execute via processx ───────────────────────────────────────────────────
   start <- proc.time()[["elapsed"]]
 
+  run_args <- list(
+    command         = exe_path,
+    args            = args,
+    wd              = dir,
+    env             = run_env,
+    echo            = echo,
+    error_on_status = FALSE
+  )
+
+  # processx::run() expects a valid timeout interval. For Inf, omit
+  # the argument entirely so the process can run without a time limit.
+  if (is.finite(timeout)) {
+    run_args$timeout <- timeout
+  }
+
   proc <- tryCatch(
-    processx::run(
-      command         = exe_path,
-      args            = args,
-      wd              = dir,
-      env             = run_env,
-      timeout         = if (is.infinite(timeout)) NULL else timeout,
-      echo            = echo,
-      error_on_status = FALSE
-    ),
+    do.call(processx::run, run_args),
     error = function(e) {
       stop(
         paste0("Failed to run '", exe, "': ", conditionMessage(e)),
@@ -109,7 +116,6 @@ run_cmd <- function(
       )
     }
   )
-
   elapsed <- round(proc.time()[["elapsed"]] - start, 3)
 
   # ── Coerce exit code to plain integer (Windows RAWSXP safety) ──────────────
